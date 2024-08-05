@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Firebase configuration
 const firebaseConfig = {
-        apiKey: "AIzaSyCZyQUx4-uOL7pfNx19wR-N88BTFksWBq0",
-        authDomain: "pantry-b92b9.firebaseapp.com",
-        projectId: "pantry-b92b9",
-        storageBucket: "pantry-b92b9.appspot.com",
-        messagingSenderId: "68315530754",
-        appId: "1:68315530754:web:387784dc048f849c72091b"
+	apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+	authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+	projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+	storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+	messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+	appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
@@ -17,4 +17,6 @@ const app = initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
-export { firestore };
+export { db };
+
+console.log(process.env.NEXT_PUBLIC_FIREBASE_API_KEY);

@@ -6,13 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "predeploy": "npm run build && npm run export",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^5.16.5",
+    "@mui/x-date-pickers": "^7.11.1",
     "@next/font": "^14.2.5",
+    "dayjs": "^1.11.12",
     "firebase": "^10.12.4",
     "next": "14.2.5",
     "react": "^18",
@@ -20,6 +25,7 @@
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "eslint-config-next": "14.2.5",
+    "gh-pages": "^6.1.1"
   }
 }
